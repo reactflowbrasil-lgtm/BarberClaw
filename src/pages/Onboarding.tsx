@@ -86,15 +86,15 @@ export const Onboarding: React.FC = () => {
                 
                 <div className="space-y-3">
                   {['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'].map((day, idx) => (
-                    <div key={day} className="flex items-center justify-between p-4 rounded-xl bg-black/30 border border-white/5">
+                    <div key={day} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 rounded-xl bg-black/30 border border-white/5 gap-4">
                       <div className="flex items-center gap-3">
                         <input type="checkbox" defaultChecked={idx !== 6} className="w-5 h-5 accent-lime-400 rounded" />
                         <span className="font-medium">{day}</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <input type="time" defaultValue="09:00" className="bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-lime-400" disabled={idx === 6} />
+                      <div className="flex items-center gap-2 w-full sm:w-auto">
+                        <input type="time" defaultValue="09:00" className="flex-1 sm:flex-none bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-lime-400" disabled={idx === 6} />
                         <span className="text-slate-500">até</span>
-                        <input type="time" defaultValue="19:00" className="bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-lime-400" disabled={idx === 6} />
+                        <input type="time" defaultValue="19:00" className="flex-1 sm:flex-none bg-black/50 border border-white/10 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-lime-400" disabled={idx === 6} />
                       </div>
                     </div>
                   ))}
@@ -189,10 +189,10 @@ export const Onboarding: React.FC = () => {
             )}
 
             {/* Navigation Buttons */}
-            <div className="mt-10 flex items-center justify-between pt-6 border-t border-white/10">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-white/10 gap-4">
               <button 
                 onClick={handlePrev}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-colors ${
+                className={`w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium transition-colors ${
                   step === 1 ? 'opacity-0 pointer-events-none' : 'text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -201,7 +201,7 @@ export const Onboarding: React.FC = () => {
               
               <button 
                 onClick={handleNext}
-                className="flex items-center gap-2 bg-lime-400 text-black px-8 py-3 rounded-full font-bold hover:bg-lime-500 transition-colors"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-lime-400 text-black px-8 py-3 rounded-full font-bold hover:bg-lime-500 transition-colors"
               >
                 {step === 4 ? 'Finalizar e Acessar Painel' : 'Próximo Passo'} <ArrowRight className="w-5 h-5" />
               </button>

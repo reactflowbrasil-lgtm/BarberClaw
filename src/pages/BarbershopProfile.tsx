@@ -47,15 +47,15 @@ export const BarbershopProfile: React.FC = () => {
         </Link>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 -mt-20 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 md:px-6 -mt-16 md:-mt-20 relative z-10">
         {/* Header Info */}
-        <div className="flex flex-col md:flex-row gap-6 items-start md:items-end mb-8">
-          <div className="w-24 h-24 rounded-2xl bg-zinc-800 border-4 border-[#0a0a0a] overflow-hidden flex-shrink-0">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-end mb-8">
+          <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-zinc-800 border-4 border-[#0a0a0a] overflow-hidden flex-shrink-0">
             <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${shopName}&backgroundColor=a3e635&textColor=000`} alt="Logo" />
           </div>
           <div className="flex-1">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">{shopName}</h1>
-            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-400">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2">{shopName}</h1>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-slate-400">
               <div className="flex items-center gap-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                 <span className="font-bold text-white">4.9</span>
@@ -70,7 +70,7 @@ export const BarbershopProfile: React.FC = () => {
         </div>
 
         {/* Booking Flow */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-4 md:p-8">
           {bookingStep === 1 && (
             <div className="animate-fade-in">
               <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
@@ -100,11 +100,11 @@ export const BarbershopProfile: React.FC = () => {
                 ))}
               </div>
               
-              <div className="mt-8 flex justify-end">
+              <div className="mt-8 flex justify-stretch sm:justify-end">
                 <button 
                   disabled={!selectedService}
                   onClick={handleNextStep}
-                  className="bg-lime-400 text-black px-8 py-3 rounded-full font-bold hover:bg-lime-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto bg-lime-400 text-black px-8 py-4 sm:py-3 rounded-full font-bold hover:bg-lime-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Continuar
                 </button>
@@ -155,11 +155,11 @@ export const BarbershopProfile: React.FC = () => {
                 <BookingCalendar onSelectDateTime={(date, time) => setSelectedDateTime({date, time})} />
               </div>
 
-              <div className="mt-8 flex justify-end">
+              <div className="mt-8 flex justify-stretch sm:justify-end">
                 <button 
                   disabled={!selectedBarber || !selectedDateTime}
                   onClick={handleNextStep}
-                  className="bg-lime-400 text-black px-8 py-3 rounded-full font-bold hover:bg-lime-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto bg-lime-400 text-black px-8 py-4 sm:py-3 rounded-full font-bold hover:bg-lime-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Confirmar Agendamento
                 </button>

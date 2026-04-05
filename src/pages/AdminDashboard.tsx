@@ -14,25 +14,25 @@ export const AdminDashboard: React.FC = () => {
       <AdminSidebar />
 
       {/* Main Content */}
-      <main className="flex-1 overflow-y-auto">
-        <header className="px-8 py-6 border-b border-white/10 flex justify-between items-center bg-[#0a0a0a]/50 backdrop-blur-md sticky top-0 z-10">
-          <div>
+      <main className="flex-1 overflow-y-auto pt-16 md:pt-0">
+        <header className="px-8 py-6 border-b border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-[#0a0a0a]/50 backdrop-blur-md sticky top-0 z-10">
+          <div className="pl-12 md:pl-0">
             <h2 className="text-2xl font-bold">Olá, Carlos</h2>
             <p className="text-sm text-slate-400">Resumo de hoje, 5 de Abril</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 w-full sm:w-auto justify-end">
             <Link to="/b/barber-flow-premium" className="bg-white/5 border border-white/10 px-4 py-2 rounded-full text-sm font-medium hover:bg-white/10 transition-colors">
               Ver página pública
             </Link>
-            <div className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center text-black font-bold">
+            <div className="w-10 h-10 rounded-full bg-lime-400 flex items-center justify-center text-black font-bold shrink-0">
               C
             </div>
           </div>
         </header>
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           {/* Metrics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
             <div className="bg-white/5 border border-white/10 p-6 rounded-3xl">
               <div className="flex justify-between items-start mb-4">
                 <div className="w-12 h-12 rounded-2xl bg-lime-400/10 flex items-center justify-center">
@@ -69,8 +69,8 @@ export const AdminDashboard: React.FC = () => {
 
           {/* Upcoming Appointments */}
           <h3 className="text-xl font-bold mb-4">Próximos Atendimentos</h3>
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
-            <table className="w-full text-left border-collapse">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr className="border-b border-white/10 text-sm text-slate-400">
                   <th className="p-4 font-medium">Horário</th>

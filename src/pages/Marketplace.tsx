@@ -3,6 +3,7 @@ import { Search, MapPin, Star, Scissors, Clock, ChevronRight } from 'lucide-reac
 import { Link } from 'react-router-dom';
 import Map, { Marker, NavigationControl } from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { PublicHeader } from '../components/marketplace/PublicHeader';
 
 const MOCK_BARBERSHOPS = [
   {
@@ -61,31 +62,14 @@ export const Marketplace: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-slate-100 font-sans flex flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/10 px-6 py-4 shrink-0">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Scissors className="w-6 h-6 text-lime-400" />
-            <h1 className="text-xl font-bold tracking-tight">
-              Barber<span className="text-lime-400 font-normal">Flow</span>
-            </h1>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-            <Link to="/onboarding" className="hover:text-white transition-colors">Para Barbearias</Link>
-            <Link to="/login" className="hover:text-white transition-colors">Entrar</Link>
-            <Link to="/register" className="bg-lime-400 text-black px-4 py-2 rounded-full font-semibold hover:bg-lime-500 transition-colors">
-              Criar Conta
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <PublicHeader />
 
-      <main className="flex-1 max-w-[1600px] w-full mx-auto px-6 py-8 flex flex-col lg:flex-row gap-8">
+      <main className="flex-1 max-w-[1600px] w-full mx-auto px-4 md:px-6 py-6 md:py-8 flex flex-col lg:flex-row gap-8">
         {/* Left Column: Search & List */}
-        <div className="w-full lg:w-1/2 flex flex-col gap-6 h-[calc(100vh-8rem)] overflow-y-auto pr-2 scrollbar-hide">
-          <div>
-            <h2 className="text-3xl font-bold mb-2">Encontre a barbearia ideal</h2>
-            <p className="text-slate-400">Agende seu horário nas melhores barbearias da região.</p>
+        <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-2 scrollbar-hide">
+          <div className="px-1">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">Encontre a barbearia ideal</h2>
+            <p className="text-slate-400 text-sm md:text-base">Agende seu horário nas melhores barbearias da região.</p>
           </div>
 
           {/* Search Bar */}

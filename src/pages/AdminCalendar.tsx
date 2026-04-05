@@ -28,29 +28,29 @@ export const AdminCalendar: React.FC = () => {
     <div className="min-h-screen bg-[#050505] text-slate-100 font-sans flex">
       <AdminSidebar />
 
-      <main className="flex-1 flex flex-col h-screen overflow-hidden">
-        <header className="px-8 py-6 border-b border-white/10 flex justify-between items-center bg-[#0a0a0a]/50 backdrop-blur-md shrink-0">
-          <div>
+      <main className="flex-1 flex flex-col h-screen overflow-hidden pt-16 md:pt-0">
+        <header className="px-4 md:px-8 py-6 border-b border-white/10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 bg-[#0a0a0a]/50 backdrop-blur-md shrink-0">
+          <div className="pl-12 md:pl-0">
             <h2 className="text-2xl font-bold">Agenda</h2>
             <p className="text-sm text-slate-400">Gerencie os horários da sua equipe</p>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center bg-white/5 rounded-lg p-1 border border-white/10">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
+            <div className="flex items-center bg-white/5 rounded-lg p-1 border border-white/10 w-full sm:w-auto justify-between sm:justify-start">
               <button onClick={prevDay} className="p-2 hover:bg-white/10 rounded-md transition-colors"><ChevronLeft className="w-4 h-4" /></button>
               <button onClick={today} className="px-4 py-2 text-sm font-medium hover:bg-white/10 rounded-md transition-colors">Hoje</button>
               <button onClick={nextDay} className="p-2 hover:bg-white/10 rounded-md transition-colors"><ChevronRight className="w-4 h-4" /></button>
             </div>
-            <h3 className="text-lg font-bold min-w-[200px] text-center">
+            <h3 className="text-lg font-bold min-w-[180px] text-center sm:text-left">
               {format(currentDate, "EEEE, d 'de' MMMM", { locale: ptBR })}
             </h3>
-            <button className="flex items-center gap-2 bg-lime-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-lime-500 transition-colors">
+            <button className="flex items-center justify-center gap-2 bg-lime-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-lime-500 transition-colors w-full sm:w-auto">
               <Plus className="w-4 h-4" /> Novo Agendamento
             </button>
           </div>
         </header>
 
-        <div className="flex-1 overflow-auto p-6">
-          <div className="min-w-[800px] bg-white/5 border border-white/10 rounded-3xl overflow-hidden flex flex-col h-full">
+        <div className="flex-1 overflow-auto p-4 md:p-6">
+          <div className="min-w-[700px] md:min-w-[800px] bg-white/5 border border-white/10 rounded-3xl overflow-hidden flex flex-col h-full">
             {/* Calendar Header (Barbers) */}
             <div className="flex border-b border-white/10 bg-black/20 shrink-0">
               <div className="w-20 shrink-0 border-r border-white/10 flex items-center justify-center">

@@ -1,34 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Scissors, Calendar, Sparkles, TrendingUp, MapPin, CheckCircle2, ArrowRight, Star } from 'lucide-react';
+import { PublicHeader } from '../components/marketplace/PublicHeader';
 
 export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-slate-100 font-sans selection:bg-lime-400 selection:text-black overflow-x-hidden">
-      {/* Header */}
-      <header className="fixed top-0 inset-x-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <Scissors className="w-6 h-6 text-lime-400" />
-            <h1 className="text-xl font-bold tracking-tight">
-              Barber<span className="text-lime-400 font-normal">Flow</span>
-            </h1>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#recursos" className="hover:text-white transition-colors">Recursos</a>
-            <a href="#planos" className="hover:text-white transition-colors">Planos</a>
-            <Link to="/marketplace" className="hover:text-white transition-colors">Explorar Barbearias</Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Link to="/login" className="text-sm font-medium text-slate-300 hover:text-white transition-colors hidden sm:block">
-              Entrar
-            </Link>
-            <Link to="/register" className="bg-lime-400 text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-lime-500 transition-colors">
-              Criar Conta
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PublicHeader />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32">
@@ -39,11 +17,11 @@ export const LandingPage: React.FC = () => {
             <Sparkles className="w-4 h-4" /> Novo: Visagismo com Inteligência Artificial
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.1] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl mx-auto leading-[1.1] animate-fade-in-up" style={{ animationDelay: '100ms' }}>
             O sistema definitivo para <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">barbearias modernas</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
             Atraia mais clientes pelo nosso marketplace, gerencie sua agenda, comissões e ofereça visagismo com IA em uma única plataforma.
           </p>
           

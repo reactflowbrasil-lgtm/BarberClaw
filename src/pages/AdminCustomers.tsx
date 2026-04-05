@@ -13,18 +13,18 @@ export const AdminCustomers: React.FC = () => {
     <div className="min-h-screen bg-[#050505] text-slate-100 font-sans flex">
       <AdminSidebar />
 
-      <main className="flex-1 overflow-y-auto">
-        <header className="px-8 py-6 border-b border-white/10 flex justify-between items-center bg-[#0a0a0a]/50 backdrop-blur-md sticky top-0 z-10">
-          <div>
+      <main className="flex-1 overflow-y-auto pt-16 md:pt-0">
+        <header className="px-8 py-6 border-b border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-[#0a0a0a]/50 backdrop-blur-md sticky top-0 z-10">
+          <div className="pl-12 md:pl-0">
             <h2 className="text-2xl font-bold">Clientes</h2>
             <p className="text-sm text-slate-400">Gerencie sua base de clientes e histórico</p>
           </div>
-          <button className="flex items-center gap-2 bg-lime-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-lime-500 transition-colors">
+          <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-lime-400 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-lime-500 transition-colors">
             <UserPlus className="w-4 h-4" /> Novo Cliente
           </button>
         </header>
 
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           {/* Search and Filters */}
           <div className="flex gap-4 mb-8">
             <div className="relative flex-1 max-w-md">
@@ -40,8 +40,8 @@ export const AdminCustomers: React.FC = () => {
           </div>
 
           {/* Customers List */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden">
-            <table className="w-full text-left border-collapse">
+          <div className="bg-white/5 border border-white/10 rounded-3xl overflow-x-auto">
+            <table className="w-full text-left border-collapse min-w-[700px]">
               <thead>
                 <tr className="border-b border-white/10 text-sm text-slate-400 bg-black/20">
                   <th className="p-4 font-medium">Cliente</th>
